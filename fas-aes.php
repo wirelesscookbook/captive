@@ -125,7 +125,7 @@ if ( ! isset($client_zone_r[1])) {
 }
 
 // Set the path to an image to display. This must be accessible to the client (hint: set up a Walled Garden if you want an Internet based image).
-$imagepath="http://$gatewayaddress/images/splash.jpg";
+$imagepath="images/splash.jpg";
 
 #######################################################
 //Start Outputting the requested responsive page:
@@ -324,9 +324,9 @@ function status_page() {
 	// Is the client already logged in?
 	if ($_GET["status"] == "authenticated") {
 		echo "
-			<p><big-red>You are already logged in and have access to the Internet.</big-red></p>
+			<p><big-red>You are authenticated and have access to the internet.</big-red></p>
 			<hr>
-			<p><italic-black>You can use your Browser, Email and other network Apps as you normally would.</italic-black></p>
+			<p><italic-black>Your browser, email and other network apps may be used.</italic-black></p>
 		";
 
 		read_terms();
@@ -630,7 +630,8 @@ function display_terms () {
 
 function insert_css() {
 	echo "
-	body {
+    body {
+        font-family: Helvetica, Arial, sans-serif;
 		background-color: lightgrey;
 		color: black;
 		margin-left: 5%;
@@ -643,9 +644,9 @@ function insert_css() {
 		margin-top:0.5em;
 		margin-bottom:0.5em;
 		margin-left:auto;
-		margin-right:auto;
-		border-style:inset;
-		border-width:5px;
+        margin-right:auto;
+        border-width:1px;
+        color: #e3e6f0;
 	} 
 
 	.offset {
@@ -693,29 +694,29 @@ function insert_css() {
 	}
 
 	med-blue {
-		font-size: 1.2em;
+		font-size: 1.1em;
 		color: blue;
 		font-weight: bold;
 		font-style: normal;
 	}
 
 	big-red {
-		font-size: 1.5em;
+		font-size: 1.2em;
 		color: red;
-		font-weight: bold;
+		font-weight: normal;
 	}
 
 	italic-black {
-		font-size: 1.0em;
+		font-size: 0.9em;
 		color: black;
-		font-weight: bold;
+		font-weight: normal;
 		font-style: italic;
 	}
 
 	copy-right {
 		font-size: 0.7em;
 		color: darkgrey;
-		font-weight: bold;
+		font-weight: normal;
 		font-style:italic;
 	}
 
